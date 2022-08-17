@@ -9,10 +9,9 @@ import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @ToString
-public class Auth {
-    String username;
-    String password;
-    AuthProfile profile;
+@Builder
+
+public class AuthResponse {
+    String message;
 }
