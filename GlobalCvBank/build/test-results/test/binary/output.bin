@@ -1,0 +1,2 @@
+Bad Request
+^Auth(username=must be a well-formed email address, password=must not be blank, profile=null)

@@ -42,7 +42,7 @@ public class RegistrationTests {
     public void registrationWrongData() throws IOException {
         AuthProfile authPro = AuthProfile.builder().name("Yossi").role("SEEKER").build();
 
-        Auth auth = Auth.builder().username("Dolma"+i+"gmail.com").password("Bo123456").profile(authPro).build();
+        Auth auth = Auth.builder().username("Dolma"+i+"gmail.com").password("").profile(authPro).build();
         RequestBody body = RequestBody.create(gson.toJson(auth),JSON);
         Request request = new Request.Builder().url("https://cvbank-main-backend-dev-mkwwqqcvpq-uc.a.run.app/" +
                 "v1/user/registration/usernamepassword").post(body).build();
