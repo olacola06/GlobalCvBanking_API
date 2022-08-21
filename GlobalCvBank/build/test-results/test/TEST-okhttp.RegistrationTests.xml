@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="okhttp.RegistrationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-18T08:08:19" hostname="DESKTOP-KF54E9L" time="1.079">
-  <properties/>
-  <testcase name="registrationWrongData" classname="okhttp.RegistrationTests" time="1.079"/>
-  <system-out><![CDATA[Bad Request
-Auth(username=must be a well-formed email address, password=must not be blank, profile=null)
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

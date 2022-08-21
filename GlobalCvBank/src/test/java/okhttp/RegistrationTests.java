@@ -3,13 +3,11 @@ package okhttp;
 import com.google.gson.Gson;
 import dto.*;
 import okhttp3.*;
-import org.apache.http.auth.AUTH;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RegistrationTests {
 
@@ -17,6 +15,7 @@ public class RegistrationTests {
     OkHttpClient client = new OkHttpClient();
     private final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     int i = (int)System.currentTimeMillis()/1000%3600;
+    Logger logger = LoggerFactory.getLogger(RegistrationTests.class);
 
     @Test
     public void registrationPos() throws IOException {
@@ -27,6 +26,7 @@ public class RegistrationTests {
 
         Auth auth = Auth.builder().username("Dolma"+i+"@gmail.com").password("Bo123456").profile(authPro)
                 .build();
+        logger.info("User to be registered with details->>"+auth.getUsername()+", "+auth.getPassword());
 
         RequestBody body = RequestBody.create(gson.toJson(auth),JSON);
         Request request = new Request.Builder().url("https://cvbank-main-backend-dev-mkwwqqcvpq-uc.a.run.app/" +
@@ -50,7 +50,7 @@ public class RegistrationTests {
         Assert.assertFalse(response.isSuccessful());
         Assert.assertEquals(response.code(),400);
 
-        ErrorDto responseError = gson.fromJson(response.body().string(),ErrorDto.class);
+        ErrorRegistDto responseError = gson.fromJson(response.body().string(), ErrorRegistDto.class);
         System.out.println(responseError.getError().toString());
         System.out.println(responseError.getMessage().toString());
 
