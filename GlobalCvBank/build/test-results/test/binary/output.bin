@@ -1,4 +1,1 @@
-K15:13:15.213 [Test worker] INFO okhttp.LoginTests - Status of Error = 401
-R15:13:15.213 [Test worker] INFO okhttp.LoginTests - Type of Error = Unauthorized
-d15:13:15.213 [Test worker] INFO okhttp.LoginTests - What went wrong ->>Login or Password incorrect
-null
+Registration Successfully
